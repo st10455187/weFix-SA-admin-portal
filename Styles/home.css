@@ -3,17 +3,17 @@
 ========================================= */
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/Fonts/Poppins-Regular.otf") format("opentype");
+  src: url("../Assets/fonts/Poppins-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/Fonts/Poppins-SemiBold.otf") format("opentype");
+  src: url("../Assets/fonts/Poppins-SemiBold.otf") format("opentype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/Fonts/Poppins-Bold.otf") format("opentype");
+  src: url("../Assets/fonts/Poppins-Bold.otf") format("opentype");
   font-weight: 700;
 }
 
