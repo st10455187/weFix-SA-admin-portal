@@ -33,26 +33,26 @@
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/fonts/Poppins-SemiBold.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  src: url("Poppins-SemiBold.otf") format("opentype"),
+       url("Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/fonts/Poppins-Bold.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-Bold.ttf") format("truetype");
+  src: url("Poppins-Bold.otf") format("opentype"),
+       url("Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/fonts/Poppins-ExtraBold.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+  src: url("Poppins-ExtraBold.otf") format("opentype"),
+       url("Poppins-ExtraBold.ttf") format("truetype");
   font-weight: 800;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../Assets/fonts/Poppins-Black.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-Black.ttf") format("truetype");
+  src: url("Poppins-Black.otf") format("opentype"),
+       url("Poppins-Black.ttf") format("truetype");
   font-weight: 900;
 }
 

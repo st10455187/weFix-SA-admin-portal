@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utility Outages | Admin Portal</title>
-  <link rel="stylesheet" href="../styles/utility.css" />
+  <title>Garbage Collection | Admin Portal</title>
+  <link rel="stylesheet" href="garbage.css" />
 </head>
 <body>
   <header class="header">
     <div class="header-left">
-      <img src="../assets/images/bLogo.png" alt="Logo" class="logo" />
-      <h2>Utility Outages</h2>
+      <img src="bLogo.png" alt="Logo" class="logo" />
+      <h2>Garbage Collection Dates</h2>
     </div>
     <button class="logout-btn" onclick="window.location.href='home.html'">← Back</button>
   </header>
 
   <main class="main-content">
-    <h3 class="section-title">Scheduled Utility Outages</h3>
+    <h3 class="section-title">Scheduled Garbage Collection</h3>
     <p class="section-subtitle">
-      View upcoming maintenance and outage dates for electricity and water supply.
+      View upcoming garbage collection days across municipalities.
     </p>
 
     <!-- CALENDAR -->
@@ -37,13 +37,13 @@
       <div id="calendarGrid" class="calendar-grid"></div>
 
       <div class="calendar-legend">
-        <span class="dot"></span> Dates with outages
+        <span class="dot"></span> Collection dates
       </div>
 
       <div id="dayEvents" class="day-events"></div>
     </section>
   </main>
 
-  <script src="../Functionality/utility.js"></script>
+  <script src="garbage.js"></script>
 </body>
 </html>
