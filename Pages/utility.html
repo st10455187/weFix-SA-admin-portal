@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utility Outages | Admin Portal</title>
+  <link rel="stylesheet" href="../Styles/utility.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="../Assets/Images/bLogo.png" alt="Logo" class="logo" />
+      <h2>Utility Outages</h2>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='home.html'">← Back</button>
+  </header>
+
+  <main class="main-content">
+    <h3 class="section-title">Scheduled Utility Outages</h3>
+    <p class="section-subtitle">
+      View upcoming maintenance and outage dates for electricity and water supply.
+    </p>
+
+    <!-- CALENDAR -->
+    <section class="calendar-section">
+      <div class="calendar-header">
+        <button id="prevMonth" class="cal-btn">‹</button>
+        <h3 id="calTitle">Calendar</h3>
+        <button id="nextMonth" class="cal-btn">›</button>
+      </div>
+
+      <div class="calendar-grid calendar-daynames">
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+        <div>Thu</div><div>Fri</div><div>Sat</div>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
+
+      <div class="calendar-legend">
+        <span class="dot"></span> Dates with outages
+      </div>
+
+      <div id="dayEvents" class="day-events"></div>
+    </section>
+  </main>
+
+  <script src="../Functionality/utility.js"></script>
+</body>
+</html>

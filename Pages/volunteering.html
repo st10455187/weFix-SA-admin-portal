@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteering Opportunities | Admin Portal</title>
+    <link rel="stylesheet" href="../Styles/volunteering.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <img src="../Assets/Images/bLogo.png" alt="Logo" class="logo" />
+        <h2>Volunteering Opportunities</h2>
+      </div>
+      <button class="logout-btn" onclick="window.location.href='../login.html'">
+        Logout
+      </button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- FILTER & SEARCH -->
+      <section class="filter-section">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by title or description..."
+        />
+
+        <select id="filterCategory">
+          <option value="All">All Categories</option>
+          <option value="Environment">Environment</option>
+          <option value="Community">Community</option>
+          <option value="Education">Education</option>
+          <option value="Animals">Animals</option>
+          <option value="Health">Health</option>
+          <option value="Arts">Arts</option>
+        </select>
+
+        <select id="filterProvince">
+          <option value="All">All Provinces</option>
+          <option value="Gauteng">Gauteng</option>
+          <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+          <option value="Western Cape">Western Cape</option>
+          <option value="Eastern Cape">Eastern Cape</option>
+          <option value="Free State">Free State</option>
+          <option value="Limpopo">Limpopo</option>
+          <option value="Northern Cape">Northern Cape</option>
+        </select>
+
+        <button id="refreshBtn">↻ Refresh</button>
+      </section>
+
+      <!-- TABLE -->
+      <section class="table-section">
+        <table class="volunteer-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>City</th>
+              <th>Province</th>
+              <th>Category</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="opportunityList">
+            <tr>
+              <td colspan="5" class="loading">Loading opportunities...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+            <!-- CALENDAR -->
+      <section class="calendar-section">
+        <div class="calendar-header">
+          <button id="prevMonth" class="cal-btn">‹</button>
+          <h3 id="calTitle">Calendar</h3>
+          <button id="nextMonth" class="cal-btn">›</button>
+        </div>
+
+        <div class="calendar-grid calendar-daynames">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+          <div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+
+        <div id="calendarGrid" class="calendar-grid"></div>
+
+        <div class="calendar-legend">
+          <span class="dot"></span> Dates with opportunities
+        </div>
+
+        <div id="dayEvents" class="day-events">
+          <!-- Click a highlighted date to see opportunities here -->
+        </div>
+      </section>
+
+      
+    </main>
+
+    <!-- MODAL -->
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal-box">
+        <h3 id="modalTitle">Opportunity Details</h3>
+        <div id="modalContent"></div>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+
+    <script src="../Data/volunteers.js"></script>
+    <script src="../Functionality/volunteering.js"></script>
+  </body>
+</html>

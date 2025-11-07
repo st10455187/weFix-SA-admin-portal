@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Users | Admin Portal</title>
+    <link rel="stylesheet" href="../Styles/users.css" />
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <img src="../Assets/Images/bLogo.png" alt="Logo" class="logo" />
+        <h2>Manage Citizens</h2>
+      </div>
+      <button class="logout-btn" onclick="window.location.href='../login.html'">
+        Logout
+      </button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- FILTER & SEARCH -->
+      <section class="filter-section">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search citizens by name, email, or phone..."
+        />
+
+        <select id="filterCity">
+          <option value="All">All Cities</option>
+          <option value="Johannesburg">Johannesburg</option>
+          <option value="Durban">Durban</option>
+          <option value="Cape Town">Cape Town</option>
+          <option value="Pretoria">Pretoria</option>
+        </select>
+
+        <select id="filterMunicipality">
+          <option value="All">All Municipalities</option>
+          <option value="City of Johannesburg">City of Johannesburg</option>
+          <option value="eThekwini">eThekwini</option>
+          <option value="City of Cape Town">City of Cape Town</option>
+          <option value="Tshwane">Tshwane</option>
+        </select>
+
+        <select id="filterStatus">
+          <option value="All">All Statuses</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+
+        <button id="refreshBtn">Refresh</button>
+      </section>
+
+      <!-- USERS TABLE -->
+      <section class="table-section">
+        <table class="users-table">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>City</th>
+              <th>Municipality</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="userList">
+            <tr>
+              <td colspan="6" class="loading">Loading users...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- USER EDIT MODAL -->
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal-box">
+        <h3 id="modalTitle">Edit Citizen</h3>
+
+        <form id="editUserForm">
+          <label>Full Name</label>
+          <input type="text" id="userName" required />
+
+          <label>Email</label>
+          <input type="email" id="userEmail" required />
+
+          <label>Phone</label>
+          <input type="text" id="userPhone" />
+
+          <label>City</label>
+          <input type="text" id="userCity" />
+
+          <label>Municipality</label>
+          <input type="text" id="userMunicipality" />
+
+          <label>Status</label>
+          <select id="userStatus">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+
+          <button type="submit" id="saveUserBtn">Save Changes</button>
+        </form>
+
+        <button id="closeModal" class="close-btn">Close</button>
+      </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successOverlay" class="modal-overlay success-overlay">
+      <div class="modal-box success-box">
+        <h3>✅ User Updated</h3>
+        <p>User information has been successfully updated!</p>
+        <button id="closeSuccessBtn">Close</button>
+      </div>
+    </div>
+
+    <script src="../Functionality/users.js"></script>
+  </body>
+</html>
