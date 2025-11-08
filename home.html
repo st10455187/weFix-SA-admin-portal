@@ -1,131 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard | WeFix SA</title>
-  <link rel="stylesheet" href="home.css" />
-</head>
-<body>
-  <div class="dashboard-container">
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-left">
-        <img src="bLogo.png" alt="Logo" class="logo" />
-        <h1>Admin Dashboard</h1>
-      </div>
-      <button class="logout-btn" id="logoutBtn">Logout</button>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-      <!-- SYSTEM OVERVIEW -->
-      <section class="stats-section">
-        <h2>📈 System Overview</h2>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h4>Total Reports</h4>
-            <p>128</p>
-          </div>
-          <div class="stat-card">
-            <h4>Pending</h4>
-            <p>32</p>
-          </div>
-          <div class="stat-card">
-            <h4>Resolved</h4>
-            <p>89</p>
-          </div>
-          <div class="stat-card">
-            <h4>New Users</h4>
-            <p>15</p>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | WeFix SA</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="icon" href="bLogo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <img src="bLogo.png" alt="Logo" class="logo" />
+          <h1>Admin Dashboard</h1>
         </div>
-      </section>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+      </header>
 
-      <!-- ACTIVE FEATURES -->
-      <section class="feature-group">
-        <h2>Active Features</h2>
-        <div class="feature-grid">
-          <div class="feature-card active-feature" data-feature="View Reports">
-            <div class="icon">📋</div>
-            <h3>View Reports</h3>
-            <p>Access and manage submitted issue reports.</p>
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- SYSTEM OVERVIEW -->
+        <section class="stats-section">
+          <h2>📈 System Overview</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h4>Total Reports</h4>
+              <p>128</p>
+            </div>
+            <div class="stat-card">
+              <h4>Pending</h4>
+              <p>32</p>
+            </div>
+            <div class="stat-card">
+              <h4>Resolved</h4>
+              <p>89</p>
+            </div>
+            <div class="stat-card">
+              <h4>New Users</h4>
+              <p>15</p>
+            </div>
           </div>
+        </section>
 
-          <div class="feature-card active-feature" data-feature="Manage Users">
-            <div class="icon">👤</div>
-            <h3>Manage Users</h3>
-            <p>View and manage registered users or staff.</p>
+        <!-- ACTIVE FEATURES -->
+        <section class="feature-group">
+          <h2>Active Features</h2>
+          <div class="feature-grid">
+            <div
+              class="feature-card active-feature"
+              data-feature="View Reports"
+            >
+              <div class="icon">📋</div>
+              <h3>View Reports</h3>
+              <p>Access and manage submitted issue reports.</p>
+            </div>
+
+            <div
+              class="feature-card active-feature"
+              data-feature="Manage Users"
+            >
+              <div class="icon">👤</div>
+              <h3>Manage Users</h3>
+              <p>View and manage registered users or staff.</p>
+            </div>
+
+            <div
+              class="feature-card active-feature"
+              data-feature="Volunteering Opportunities"
+            >
+              <div class="icon">🤝</div>
+              <h3>Volunteering Opportunities</h3>
+              <p>Connect with volunteers in your area.</p>
+            </div>
+
+            <div class="feature-card active-feature" data-feature="Statistics">
+              <div class="icon">📊</div>
+              <h3>Statistics</h3>
+              <p>Analyze trends and track system progress.</p>
+            </div>
+
+            <div
+              class="feature-card active-feature"
+              data-feature="Scheduled Outage"
+            >
+              <div class="icon">⛑️</div>
+              <h3>Scheduled Outage</h3>
+              <p>View all scheduled outages and maintenance dates.</p>
+            </div>
+
+            <div
+              class="feature-card active-feature"
+              data-feature="Garbage Collection Dates"
+            >
+              <div class="icon">🚛</div>
+              <h3>Garbage Collection Dates</h3>
+              <p>View all the scheduled dates for garbage collection.</p>
+            </div>
           </div>
+        </section>
 
-          <div class="feature-card active-feature" data-feature="Volunteering Opportunities">
-            <div class="icon">🤝</div>
-            <h3>Volunteering Opportunities</h3>
-            <p>Connect with volunteers in your area.</p>
+        <!-- COMING SOON FEATURES -->
+        <section class="feature-group">
+          <h2>Coming Soon</h2>
+          <div class="feature-grid">
+            <div class="feature-card coming-soon" data-feature="Assign Tasks">
+              <div class="icon">🛠️</div>
+              <h3>Assign Tasks</h3>
+              <p>Assign repair or maintenance jobs to workers.</p>
+            </div>
+
+            <div
+              class="feature-card coming-soon"
+              data-feature="Municipal Areas"
+            >
+              <div class="icon">🏙️</div>
+              <h3>Municipal Areas</h3>
+              <p>Update or view registered municipal data.</p>
+            </div>
+
+            <div
+              class="feature-card coming-soon"
+              data-feature="Generate Reports"
+            >
+              <div class="icon">🧾</div>
+              <h3>Generate Reports</h3>
+              <p>Create and export performance summaries.</p>
+            </div>
+
+            <div class="feature-card coming-soon" data-feature="Messages">
+              <div class="icon">📨</div>
+              <h3>Messages</h3>
+              <p>Read and reply to messages from users.</p>
+            </div>
           </div>
-
-          <div class="feature-card active-feature" data-feature="Statistics">
-            <div class="icon">📊</div>
-            <h3>Statistics</h3>
-            <p>Analyze trends and track system progress.</p>
-          </div>
-
-          <div class="feature-card active-feature" data-feature="Scheduled Outage">
-            <div class="icon">⛑️</div>
-            <h3>Scheduled Outage</h3>
-            <p>View all scheduled outages and maintenance dates.</p>
-          </div>
-
-          <div class="feature-card active-feature" data-feature="Garbage Collection Dates">
-            <div class="icon">🚛</div>
-            <h3>Garbage Collection Dates</h3>
-            <p>View all the scheduled dates for garbage collection.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- COMING SOON FEATURES -->
-      <section class="feature-group">
-        <h2>Coming Soon</h2>
-        <div class="feature-grid">
-          <div class="feature-card coming-soon" data-feature="Assign Tasks">
-            <div class="icon">🛠️</div>
-            <h3>Assign Tasks</h3>
-            <p>Assign repair or maintenance jobs to workers.</p>
-          </div>
-
-          <div class="feature-card coming-soon" data-feature="Municipal Areas">
-            <div class="icon">🏙️</div>
-            <h3>Municipal Areas</h3>
-            <p>Update or view registered municipal data.</p>
-          </div>
-
-          <div class="feature-card coming-soon" data-feature="Generate Reports">
-            <div class="icon">🧾</div>
-            <h3>Generate Reports</h3>
-            <p>Create and export performance summaries.</p>
-          </div>
-
-          <div class="feature-card coming-soon" data-feature="Messages">
-            <div class="icon">📨</div>
-            <h3>Messages</h3>
-            <p>Read and reply to messages from users.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <!-- MODAL -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-box">
-      <h3 id="modalTitle">Feature</h3>
-      <p id="modalDescription">Description</p>
-      <button id="modalAction" class="modal-action">Open Feature</button>
-      <button id="closeModal" class="modal-close">Close</button>
+        </section>
+      </main>
     </div>
-  </div>
 
-  <script src="home.js"></script>
-</body>
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box">
+        <h3 id="modalTitle">Feature</h3>
+        <p id="modalDescription">Description</p>
+        <button id="modalAction" class="modal-action">Open Feature</button>
+        <button id="closeModal" class="modal-close">Close</button>
+      </div>
+    </div>
+
+    <script src="home.js"></script>
+  </body>
 </html>

@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WeFix SA Admin | Statistics</title>
-  <link rel="stylesheet" href="statistics.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-  <header class="header">
-    <div class="header-left">
-      <img src="bLogo.png" class="logo" alt="WeFix SA" />
-      <h2>System Statistics</h2>
-    </div>
-    <button class="logout-btn" onclick="window.location.href='login.html'">
-      Logout
-    </button>
-  </header>
-
-  <main class="main-content">
-    <section class="stats-grid">
-      <div class="chart-card">
-        <h3>Reports by Status</h3>
-        <canvas id="reportStatusChart"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeFix SA Admin | Statistics</title>
+    <link rel="stylesheet" href="statistics.css" />
+    <link rel="icon" href="bLogo.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <img src="bLogo.png" class="logo" alt="WeFix SA" />
+        <h2>System Statistics</h2>
       </div>
+      <button class="logout-btn" onclick="window.location.href='login.html'">
+        Logout
+      </button>
+    </header>
 
-      <div class="chart-card">
-        <h3>Reports by Municipality</h3>
-        <canvas id="reportMunicipalityChart"></canvas>
-      </div>
+    <main class="main-content">
+      <section class="stats-grid">
+        <div class="chart-card">
+          <h3>Reports by Status</h3>
+          <canvas id="reportStatusChart"></canvas>
+        </div>
 
-      <div class="chart-card">
-        <h3>Users by Province</h3>
-        <canvas id="userProvinceChart"></canvas>
-      </div>
+        <div class="chart-card">
+          <h3>Reports by Municipality</h3>
+          <canvas id="reportMunicipalityChart"></canvas>
+        </div>
 
-      <div class="chart-card">
-        <h3>Volunteering by Category</h3>
-        <canvas id="volunteerCategoryChart"></canvas>
-      </div>
-    </section>
-  </main>
+        <div class="chart-card">
+          <h3>Users by Province</h3>
+          <canvas id="userProvinceChart"></canvas>
+        </div>
 
-  <script src="statistics.js"></script>
-</body>
+        <div class="chart-card">
+          <h3>Volunteering by Category</h3>
+          <canvas id="volunteerCategoryChart"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <script src="statistics.js"></script>
+  </body>
 </html>

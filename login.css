@@ -1,66 +1,58 @@
-/* =========================================
-   CUSTOM FONT FAMILY — POPPINS (FULL SET)
-========================================= */
 @font-face {
   font-family: "Poppins";
   src: url("../Assets/fonts/Poppins-Thin.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-Thin.ttf") format("truetype");
+    url("../Assets/fonts/Poppins-Thin.ttf") format("truetype");
   font-weight: 100;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../Assets/fonts/Poppins-ExtraLight.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-ExtraLight.ttf") format("truetype");
+    url("../Assets/fonts/Poppins-ExtraLight.ttf") format("truetype");
   font-weight: 200;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../Assets/fonts/Poppins-Light.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-Light.ttf") format("truetype");
+    url("../Assets/fonts/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../Assets/fonts/Poppins-Regular.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-Regular.ttf") format("truetype");
+    url("../Assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../Assets/fonts/Poppins-Medium.otf") format("opentype"),
-       url("../Assets/fonts/Poppins-Medium.ttf") format("truetype");
+    url("../Assets/fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
 }
 @font-face {
   font-family: "Poppins";
   src: url("Poppins-SemiBold.otf") format("opentype"),
-       url("Poppins-SemiBold.ttf") format("truetype");
+    url("Poppins-SemiBold.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Poppins";
   src: url("Poppins-Bold.otf") format("opentype"),
-       url("Poppins-Bold.ttf") format("truetype");
+    url("Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 @font-face {
   font-family: "Poppins";
   src: url("Poppins-ExtraBold.otf") format("opentype"),
-       url("Poppins-ExtraBold.ttf") format("truetype");
+    url("Poppins-ExtraBold.ttf") format("truetype");
   font-weight: 800;
 }
 @font-face {
   font-family: "Poppins";
   src: url("Poppins-Black.otf") format("opentype"),
-       url("Poppins-Black.ttf") format("truetype");
+    url("Poppins-Black.ttf") format("truetype");
   font-weight: 900;
 }
 
-/* ----------------------------
-   LOGIN PAGE STYLING
----------------------------- */
-
-/* Reset & Global */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -78,9 +70,7 @@ body {
   color: #000;
 }
 
-/* ----------------------------
-   LOGIN CARD CONTAINER
----------------------------- */
+/* LOGIN CARD CONTAINER */
 .login-container {
   display: flex;
   justify-content: center;
@@ -99,9 +89,6 @@ body {
   animation: fadeIn 0.6s ease;
 }
 
-/* ----------------------------
-   LOGO
----------------------------- */
 .logo {
   width: 90px;
   height: 90px;
@@ -110,9 +97,6 @@ body {
   border-radius: 12px;
 }
 
-/* ----------------------------
-   HEADINGS
----------------------------- */
 h2 {
   font-size: 22px;
   font-weight: 700;
@@ -127,9 +111,6 @@ h2 {
   font-weight: 400;
 }
 
-/* ----------------------------
-   INPUT FIELDS
----------------------------- */
 .form-group {
   margin-bottom: 15px;
 }
@@ -152,9 +133,6 @@ input:focus {
   box-shadow: 0 0 0 2px rgba(39, 123, 222, 0.15);
 }
 
-/* ----------------------------
-   BUTTON
----------------------------- */
 button {
   width: 100%;
   padding: 12px;
@@ -173,9 +151,6 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* ----------------------------
-   FOOTER TEXT
----------------------------- */
 .hint {
   font-size: 13px;
   color: #888;
@@ -183,9 +158,6 @@ button:hover {
   font-weight: 300;
 }
 
-/* ----------------------------
-   ANIMATION
----------------------------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -197,9 +169,6 @@ button:hover {
   }
 }
 
-/* ----------------------------
-   MOBILE RESPONSIVE
----------------------------- */
 @media (max-width: 480px) {
   .login-card {
     margin: 0 20px;

@@ -1,7 +1,4 @@
-// -----------------------------
-// LOGIN FUNCTIONALITY SCRIPT
-// -----------------------------
-
+/* LOGIN FUNCTIONALITY SCRIPT */
 document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("loginBtn");
 
@@ -38,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// -----------------------------
-// HELPER: Inline Alert Popup
-// -----------------------------
 function showAlert(message) {
   // Remove any existing alert first
   const oldAlert = document.querySelector(".alert-box");

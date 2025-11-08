@@ -1,4 +1,4 @@
-// Example demo data (replace with Supabase queries later)
+// Usin demo data for now
 const reportData = {
   status: ["Pending", "In Progress", "Resolved", "Rejected"],
   values: [15, 22, 40, 6],

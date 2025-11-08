@@ -1,10 +1,8 @@
-// --- SUPABASE CONFIG ---
 const SUPABASE_URL = "https://fxjqggmgqxmngjmqjghy.supabase.co";
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4anFnZ21ncXhtbmdqbXFqZ2h5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MTk3NDEsImV4cCI6MjA3ODA5NTc0MX0.iVHA0a_9D5VQjD_ZYmh8AcriqzY18_y7QGqzCat9GiI";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// --- DOM ELEMENTS ---
 const tableBody = document.getElementById("reportList");
 const modalOverlay = document.getElementById("modalOverlay");
 const modalTitle = document.getElementById("modalTitle");
@@ -16,7 +14,6 @@ const updateStatusBtn = document.getElementById("updateStatusBtn");
 const successOverlay = document.getElementById("successOverlay");
 const closeSuccessBtn = document.getElementById("closeSuccessBtn");
 
-// Filter controls
 const searchInput = document.getElementById("searchInput");
 const filterCategory = document.getElementById("filterCategory");
 const filterCity = document.getElementById("filterCity");
@@ -26,7 +23,6 @@ const refreshBtn = document.getElementById("refreshBtn");
 let reportsData = [];
 let selectedReport = null;
 
-// --- FETCH REPORTS ---
 async function fetchReports() {
   tableBody.innerHTML =
     '<tr><td colspan="5" class="loading">Fetching reports...</td></tr>';
@@ -48,9 +44,7 @@ async function fetchReports() {
   displayReports(data);
 }
 
-// --- POPULATE FILTER DROPDOWNS ---
 function populateFilters(data) {
-  // Get unique city and municipality names
   const cities = ["All", ...new Set(data.map((r) => r.city).filter(Boolean))];
   const municipalities = [
     "All",
@@ -63,7 +57,6 @@ function populateFilters(data) {
     .join("");
 }
 
-// --- DISPLAY REPORTS (filtered or full) ---
 function displayReports(data) {
   if (!data || data.length === 0) {
     tableBody.innerHTML =
@@ -92,7 +85,6 @@ function displayReports(data) {
   });
 }
 
-// --- FILTER & SEARCH FUNCTION ---
 function applyFilters() {
   const search = searchInput.value.toLowerCase();
   const cat = filterCategory.value;
@@ -108,23 +100,22 @@ function applyFilters() {
 
     const matchesCategory = cat === "All" || r.category === cat;
     const matchesCity = city === "All" || r.city === city;
-    const matchesMunicipality =
-      muni === "All" || r.municipality === muni;
+    const matchesMunicipality = muni === "All" || r.municipality === muni;
 
-    return matchesSearch && matchesCategory && matchesCity && matchesMunicipality;
+    return (
+      matchesSearch && matchesCategory && matchesCity && matchesMunicipality
+    );
   });
 
   displayReports(filtered);
 }
 
-// --- EVENT LISTENERS FOR FILTERS ---
 searchInput.addEventListener("input", applyFilters);
 filterCategory.addEventListener("change", applyFilters);
 filterCity.addEventListener("change", applyFilters);
 filterMunicipality.addEventListener("change", applyFilters);
 refreshBtn.addEventListener("click", fetchReports);
 
-// --- SHOW MODAL ---
 function showModal(report) {
   selectedReport = report;
 
@@ -147,7 +138,6 @@ function showModal(report) {
   modalOverlay.classList.add("visible");
 }
 
-// --- UPDATE STATUS ---
 updateStatusBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   if (!selectedReport) return;
@@ -172,7 +162,6 @@ updateStatusBtn.addEventListener("click", async (e) => {
   fetchReports();
 });
 
-// --- CLOSE MODALS ---
 closeModal.addEventListener("click", () =>
   modalOverlay.classList.remove("visible")
 );
@@ -183,5 +172,4 @@ closeSuccessBtn.addEventListener("click", () =>
   successOverlay.classList.remove("visible")
 );
 
-// --- INITIAL LOAD ---
 fetchReports();

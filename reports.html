@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reports | WeFix SA Admin</title>
   <link rel="stylesheet" href="reports.css" />
+  <link rel="icon" href="bLogo.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <!-- HEADER -->
   <header class="header">
     <div class="header-left">
       <img src="bLogo.png" alt="Logo" class="logo" />
@@ -17,7 +17,6 @@
     <button class="logout-btn" id="logoutBtn">Logout</button>
   </header>
 
-  <!-- FILTER BAR -->
   <section class="filter-section">
   <input
     type="text"
@@ -48,7 +47,6 @@
 </section>
 
 
-    <!-- REPORTS TABLE -->
     <section class="table-section">
       <table class="reports-table">
         <thead>
@@ -67,7 +65,6 @@
     </section>
   </main>
 
-  <!-- ✅ REPORT DETAIL MODAL -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal-box">
       <h3 id="modalTitle">Report Details</h3>
@@ -92,7 +89,6 @@
     </div>
   </div>
 
-  <!-- ✅ SUCCESS MODAL -->
   <div class="modal-overlay success-overlay" id="successOverlay">
     <div class="modal-box success-box">
       <h3>✅ Success</h3>

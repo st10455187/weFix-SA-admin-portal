@@ -66,9 +66,6 @@ body {
   margin: auto;
 }
 
-/* ===============================
-   FILTER & SEARCH STYLING (IMPROVED)
-=============================== */
 .filter-section {
   display: flex;
   flex-wrap: wrap;
@@ -230,9 +227,6 @@ body {
   background: #272525;
 }
 
-/* ===============================
-   BUTTON STYLES (BLACK THEME + EQUAL WIDTH)
-=============================== */
 .status-section {
   background: #f9f9f9;
   padding: 15px;
@@ -265,15 +259,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* Optional spacing if both buttons appear together */
 .modal-box button + button {
   margin-top: 10px;
 }
 
-
-/* ===============================
-   STATUS COLORS
-=============================== */
 .status-pending {
   color: #e6b800;
   font-weight: 600;
@@ -291,9 +280,6 @@ body {
   font-weight: 600;
 }
 
-/* ===============================
-   STATUS SECTION IN MODAL
-=============================== */
 .status-section {
   margin-top: 15px;
   background: #f5f8ff;
@@ -337,9 +323,6 @@ body {
   background: #3a6297;
 }
 
-/* ===============================
-   SUCCESS MODAL
-=============================== */
 .success-overlay {
   display: none;
 }
@@ -374,9 +357,13 @@ body {
   font-weight: 600;
 }
 
-
-/* ANIMATION */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

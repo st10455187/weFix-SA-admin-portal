@@ -1,48 +1,86 @@
-// --- GARBAGE COLLECTION DATES ---
 const collections = [
   {
-    id: 1,
-    date: "2025-11-10",
+    id: 0,
+    date: "2025-11-03",
     area: "Sandton",
-    zone: "Zone 3",
-    type: "Recyclables",
+    zone: "Zone 5",
+    type: "General Waste Collection",
+    note: "Green bins only",
+  },
+  {
+    id: 1,
+    date: "2025-11-07",
+    area: "Centurion",
+    zone: "Zone 1",
+    type: "Recycling Pickup",
     note: "Green bins only",
   },
   {
     id: 2,
-    date: "2025-11-14",
+    date: "2025-11-12",
     area: "Midrand",
-    zone: "Zone 1",
-    type: "General Waste",
+    zone: "Zone 4",
+    type: "Garden Waste",
     note: "Black bins only",
   },
   {
     id: 3,
-    date: "2025-11-18",
-    area: "Pretoria East",
-    zone: "Zone 5",
-    type: "Organic Waste",
-    note: "Brown bins - food waste collection",
+    date: "2025-11-15",
+    area: "Fourways",
+    zone: "Zone 2",
+    type: "Bulk Waste Collection",
+    note: "Place large items on curb",
   },
   {
     id: 4,
-    date: "2025-11-25",
-    area: "Tembisa",
-    zone: "Zone 2",
-    type: "Recyclables",
-    note: "Glass and plastic only",
+    date: "2025-11-18",
+    area: "Randburg",
+    zone: "Zone 3",
+    type: "Recycling Pickup",
+    note: "Blue bins only",
   },
   {
     id: 5,
-    date: "2025-12-02",
-    area: "Johannesburg CBD",
+    date: "2025-11-20",
+    area: "Rosebank",
+    zone: "Zone 5",
+    type: "General Waste Collection",
+    note: "Green bins only",
+  },
+  {
+    id: 6,
+    date: "2025-11-22",
+    area: "Soweto",
+    zone: "Zone 6",
+    type: "Garden Waste",
+    note: "Black bins only",
+  },
+  {
+    id: 7,
+    date: "2025-11-25",
+    area: "Pretoria East",
+    zone: "Zone 2",
+    type: "Bulk Waste Collection",
+    note: "Place old furniture curbside",
+  },
+  {
+    id: 8,
+    date: "2025-11-27",
+    area: "Alexandra",
+    zone: "Zone 1",
+    type: "Recycling Pickup",
+    note: "Blue bins only",
+  },
+  {
+    id: 9,
+    date: "2025-11-30",
+    area: "Bryanston",
     zone: "Zone 4",
-    type: "General Waste",
-    note: "Mixed waste pickup",
+    type: "General Waste Collection",
+    note: "Green bins only",
   },
 ];
 
-// --- DOM ELEMENTS ---
 const calTitle = document.getElementById("calTitle");
 const calendarGrid = document.getElementById("calendarGrid");
 const prevMonthBtn = document.getElementById("prevMonth");
@@ -54,7 +92,10 @@ let current = new Date();
 // Group collections by date
 const collectionMap = collections.reduce((map, c) => {
   const d = new Date(c.date);
-  const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(
+    2,
+    "0"
+  )}-${String(d.getDate()).padStart(2, "0")}`;
   if (!map[key]) map[key] = [];
   map[key].push(c);
   return map;
@@ -64,7 +105,9 @@ function renderCalendar(year, month) {
   calendarGrid.innerHTML = "";
   dayEvents.innerHTML = "";
 
-  const monthName = new Date(year, month).toLocaleString("default", { month: "long" });
+  const monthName = new Date(year, month).toLocaleString("default", {
+    month: "long",
+  });
   calTitle.textContent = `${monthName} ${year}`;
 
   const firstDay = new Date(year, month, 1);
@@ -87,7 +130,9 @@ function renderCalendar(year, month) {
     cell.className = "cal-cell";
     cell.textContent = day;
 
-    const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+      day
+    ).padStart(2, "0")}`;
     const hasCollection = !!collectionMap[key];
 
     if (

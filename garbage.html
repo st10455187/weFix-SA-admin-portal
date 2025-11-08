@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garbage Collection | Admin Portal</title>
-  <link rel="stylesheet" href="garbage.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="header-left">
-      <img src="bLogo.png" alt="Logo" class="logo" />
-      <h2>Garbage Collection Dates</h2>
-    </div>
-    <button class="logout-btn" onclick="window.location.href='home.html'">← Back</button>
-  </header>
-
-  <main class="main-content">
-    <h3 class="section-title">Scheduled Garbage Collection</h3>
-    <p class="section-subtitle">
-      View upcoming garbage collection days across municipalities.
-    </p>
-
-    <!-- CALENDAR -->
-    <section class="calendar-section">
-      <div class="calendar-header">
-        <button id="prevMonth" class="cal-btn">‹</button>
-        <h3 id="calTitle">Calendar</h3>
-        <button id="nextMonth" class="cal-btn">›</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garbage Collection | Admin Portal</title>
+    <link rel="stylesheet" href="garbage.css" />
+    <link rel="icon" href="bLogo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <img src="bLogo.png" alt="Logo" class="logo" />
+        <h2>Garbage Collection Dates</h2>
       </div>
+      <button class="logout-btn" onclick="window.location.href='home.html'">
+        Back
+      </button>
+    </header>
 
-      <div class="calendar-grid calendar-daynames">
-        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
-        <div>Thu</div><div>Fri</div><div>Sat</div>
-      </div>
+    <main class="main-content">
+      <h3 class="section-title">Scheduled Garbage Collection</h3>
+      <p class="section-subtitle">
+        View upcoming garbage collection days across municipalities.
+      </p>
 
-      <div id="calendarGrid" class="calendar-grid"></div>
+      <section class="calendar-section">
+        <div class="calendar-header">
+          <button id="prevMonth" class="cal-btn">‹</button>
+          <h3 id="calTitle">Calendar</h3>
+          <button id="nextMonth" class="cal-btn">›</button>
+        </div>
 
-      <div class="calendar-legend">
-        <span class="dot"></span> Collection dates
-      </div>
+        <div class="calendar-grid calendar-daynames">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
 
-      <div id="dayEvents" class="day-events"></div>
-    </section>
-  </main>
+        <div id="calendarGrid" class="calendar-grid"></div>
 
-  <script src="garbage.js"></script>
-</body>
+        <div class="calendar-legend">
+          <span class="dot"></span> Collection dates
+        </div>
+
+        <div id="dayEvents" class="day-events"></div>
+      </section>
+    </main>
+
+    <script src="garbage.js"></script>
+  </body>
 </html>
