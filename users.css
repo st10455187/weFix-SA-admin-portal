@@ -52,7 +52,7 @@ body {
   font-weight: 500;
 }
 .logout-btn:hover {
-  background: #277bde;
+  background: #292b2e;
 }
 
 /* MAIN CONTENT */
@@ -110,18 +110,18 @@ body {
   cursor: pointer;
 }
 #refreshBtn:hover {
-  background: #277bde;
+  background: #292b2e;
 }
 
 /* --- TABLE --- */
 .users-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* ensures equal-width columns */
+  table-layout: fixed;
 }
 
 .users-table th {
-  background: #277bde;
+  background: #000;
   color: #fff;
   text-align: left;
   padding: 14px 12px;
@@ -134,10 +134,10 @@ body {
   padding: 12px;
   border-bottom: 1px solid #eee;
   font-size: 14px;
-  white-space: nowrap;       /* prevents wrapping */
-  overflow: hidden;          /* hides overflow */
-  text-overflow: ellipsis;   /* adds "..." for long text */
-  vertical-align: middle;    /* keeps text centered vertically */
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  vertical-align: middle;
 }
 
 .users-table tr:hover {
@@ -145,10 +145,15 @@ body {
   cursor: pointer;
 }
 
-
 /* STATUS COLORS */
-.status-active { color: #28a745; font-weight: 600; }
-.status-inactive { color: #e63946; font-weight: 600; }
+.status-active {
+  color: #28a745;
+  font-weight: 600;
+}
+.status-inactive {
+  color: #e63946;
+  font-weight: 600;
+}
 
 /* MODALS */
 .modal-overlay {
@@ -160,7 +165,9 @@ body {
   align-items: center;
   z-index: 999;
 }
-.modal-overlay.visible { display: flex; }
+.modal-overlay.visible {
+  display: flex;
+}
 .modal-box {
   background: #fff;
   padding: 30px;
@@ -169,9 +176,18 @@ body {
   max-width: 450px;
   animation: fadeIn 0.3s ease;
 }
-.modal-box h3 { margin-bottom: 15px; text-align: center; }
-.modal-box label { font-weight: 600; font-size: 14px; margin-top: 10px; display: block; }
-.modal-box input, .modal-box select {
+.modal-box h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.modal-box label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+}
+.modal-box input,
+.modal-box select {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -179,7 +195,8 @@ body {
   border: 1px solid #ccc;
   background: #f9f9f9;
 }
-.modal-box input:focus, .modal-box select:focus {
+.modal-box input:focus,
+.modal-box select:focus {
   border-color: #277bde;
   background: #fff;
 }
@@ -194,7 +211,9 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
-.modal-box button:hover { background: #222; }
+.modal-box button:hover {
+  background: #222;
+}
 
 .close-btn {
   background: #000 !important;
@@ -202,11 +221,23 @@ body {
   margin-top: 10px;
 }
 
-.success-overlay.visible { display: flex; }
-.success-box { text-align: center; }
-.success-box h3 { color: #28a745; }
+.success-overlay.visible {
+  display: flex;
+}
+.success-box {
+  text-align: center;
+}
+.success-box h3 {
+  color: #28a745;
+}
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

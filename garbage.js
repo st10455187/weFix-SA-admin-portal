@@ -89,7 +89,6 @@ const dayEvents = document.getElementById("dayEvents");
 
 let current = new Date();
 
-// Group collections by date
 const collectionMap = collections.reduce((map, c) => {
   const d = new Date(c.date);
   const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(
@@ -205,5 +204,4 @@ nextMonthBtn.addEventListener("click", () => {
   renderCalendar(current.getFullYear(), current.getMonth());
 });
 
-// Init
 renderCalendar(current.getFullYear(), current.getMonth());

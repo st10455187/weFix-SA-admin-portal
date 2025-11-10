@@ -1,4 +1,3 @@
-// --- SAMPLE UTILITY OUTAGE DATA ---
 const outages = [
   {
     id: 1,
@@ -34,7 +33,6 @@ const outages = [
   },
 ];
 
-// --- DOM ELEMENTS ---
 const calTitle = document.getElementById("calTitle");
 const calendarGrid = document.getElementById("calendarGrid");
 const prevMonthBtn = document.getElementById("prevMonth");
@@ -43,7 +41,6 @@ const dayEvents = document.getElementById("dayEvents");
 
 let current = new Date();
 
-// Map outages by date (YYYY-MM-DD)
 const outageMap = outages.reduce((map, o) => {
   const d = new Date(o.date);
   const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -65,7 +62,6 @@ function renderCalendar(year, month) {
   const prevDays = startWeekday;
   const prevMonthDays = new Date(year, month, 0).getDate();
 
-  // previous month padding
   for (let i = prevDays - 1; i >= 0; i--) {
     const cell = document.createElement("div");
     cell.className = "cal-cell other-month";
@@ -153,5 +149,4 @@ nextMonthBtn.addEventListener("click", () => {
   renderCalendar(current.getFullYear(), current.getMonth());
 });
 
-// Init
 renderCalendar(current.getFullYear(), current.getMonth());

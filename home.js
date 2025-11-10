@@ -1,4 +1,3 @@
-// Logout check
 document.getElementById("logoutBtn").addEventListener("click", () => {
   localStorage.removeItem("loggedIn");
   window.location.href = "login.html";
@@ -7,14 +6,12 @@ if (localStorage.getItem("loggedIn") !== "true") {
   window.location.href = "login.html";
 }
 
-// Modal setup
 const modalOverlay = document.getElementById("modalOverlay");
 const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const modalAction = document.getElementById("modalAction");
 const closeModal = document.getElementById("closeModal");
 
-// Active feature info
 const activeFeatures = {
   "View Reports": {
     desc: "Access all reports submitted by users. Filter, approve, or mark issues as resolved.",
@@ -42,7 +39,6 @@ const activeFeatures = {
   },
 };
 
-// Handle clicks for active features
 document.querySelectorAll(".active-feature").forEach((card) => {
   card.addEventListener("click", () => {
     const feature = card.getAttribute("data-feature");
@@ -56,7 +52,6 @@ document.querySelectorAll(".active-feature").forEach((card) => {
   });
 });
 
-// Handle clicks for coming soon features
 document.querySelectorAll(".coming-soon").forEach((card) => {
   card.addEventListener("click", () => {
     const feature = card.getAttribute("data-feature");

@@ -378,7 +378,6 @@ function renderTable(list) {
   });
 }
 
-// --- SHOW MODAL ---
 function showModal(item) {
   modalTitle.textContent = item.title;
   modalContent.innerHTML = `
@@ -398,7 +397,6 @@ function showModal(item) {
   modalOverlay.classList.add("visible");
 }
 
-// --- CLOSE MODAL ---
 closeModal.addEventListener("click", () =>
   modalOverlay.classList.remove("visible")
 );
@@ -406,7 +404,6 @@ modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) modalOverlay.classList.remove("visible");
 });
 
-// --- FILTERING ---
 function applyFilters() {
   const search = searchInput.value.toLowerCase();
   const cat = filterCategory.value;
@@ -424,7 +421,6 @@ function applyFilters() {
   renderTable(filtered);
 }
 
-// --- REFRESH ---
 refreshBtn.addEventListener("click", () => {
   searchInput.value = "";
   filterCategory.value = "All";
@@ -432,26 +428,21 @@ refreshBtn.addEventListener("click", () => {
   renderTable(opportunities);
 });
 
-// --- INPUT EVENTS ---
 searchInput.addEventListener("input", applyFilters);
 filterCategory.addEventListener("change", applyFilters);
 filterProvince.addEventListener("change", applyFilters);
 
-// --- INITIAL LOAD ---
 renderTable(opportunities);
 
-// ===============================
-// CALENDAR: Highlight opportunity dates
-// ===============================
+
 const calTitle = document.getElementById("calTitle");
 const calendarGrid = document.getElementById("calendarGrid");
 const prevMonthBtn = document.getElementById("prevMonth");
 const nextMonthBtn = document.getElementById("nextMonth");
 const dayEvents = document.getElementById("dayEvents");
 
-let current = new Date(); // current viewed month
+let current = new Date(); 
 
-// Map: "YYYY-MM-DD" -> [opportunities...]
 const eventMap = opportunities.reduce((map, op) => {
   const d = new Date(op.date);
   const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -460,7 +451,6 @@ const eventMap = opportunities.reduce((map, op) => {
   return map;
 }, {});
 
-// Render the calendar for a given year and month (0-11)
 function renderCalendar(year, month) {
   calendarGrid.innerHTML = "";
   dayEvents.innerHTML = "";
@@ -472,11 +462,9 @@ function renderCalendar(year, month) {
   const startWeekday = firstDay.getDay(); // 0 Sun - 6 Sat
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // previous month trailing days (for grid alignment)
   const prevDays = startWeekday;
   const prevMonthDays = new Date(year, month, 0).getDate(); // last day of prev month
 
-  // Fill previous month's tail cells
   for (let i = prevDays - 1; i >= 0; i--) {
     const dayNum = prevMonthDays - i;
     const cell = document.createElement("div");
@@ -486,7 +474,6 @@ function renderCalendar(year, month) {
   }
 
   const today = new Date();
-  // Fill current month cells
   for (let day = 1; day <= daysInMonth; day++) {
     const cell = document.createElement("div");
     cell.className = "cal-cell";
@@ -495,7 +482,6 @@ function renderCalendar(year, month) {
     const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
     const hasEvents = !!eventMap[key];
 
-    // mark today
     if (
       day === today.getDate() &&
       month === today.getMonth() &&
@@ -504,7 +490,6 @@ function renderCalendar(year, month) {
       cell.classList.add("today");
     }
 
-    // mark event days
     if (hasEvents) {
       cell.classList.add("has-event");
 
@@ -517,14 +502,12 @@ function renderCalendar(year, month) {
       count.textContent = eventMap[key].length;
       cell.appendChild(count);
 
-      // clicking shows events for the day
       cell.addEventListener("click", () => showDayEvents(key));
     }
 
     calendarGrid.appendChild(cell);
   }
 
-  // Fill next month leading cells to complete the grid (optional)
   const totalCells = prevDays + daysInMonth;
   const nextCells = (7 - (totalCells % 7)) % 7;
   for (let i = 1; i <= nextCells; i++) {
@@ -559,7 +542,6 @@ function showDayEvents(key) {
   dayEvents.innerHTML = `<h4>${niceDate}</h4>${listHtml}`;
 }
 
-// Month navigation
 prevMonthBtn.addEventListener("click", () => {
   current.setMonth(current.getMonth() - 1);
   renderCalendar(current.getFullYear(), current.getMonth());
@@ -569,5 +551,4 @@ nextMonthBtn.addEventListener("click", () => {
   renderCalendar(current.getFullYear(), current.getMonth());
 });
 
-// Initial render
 renderCalendar(current.getFullYear(), current.getMonth());

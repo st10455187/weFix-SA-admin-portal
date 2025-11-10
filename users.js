@@ -1,14 +1,8 @@
-// ===============================
-// SUPABASE CONFIG
-// ===============================
 const SUPABASE_URL = "https://fxjqggmgqxmngjmqjghy.supabase.co";
 const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4anFnZ21ncXhtbmdqbXFqZ2h5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MTk3NDEsImV4cCI6MjA3ODA5NTc0MX0.iVHA0a_9D5VQjD_ZYmh8AcriqzY18_y7QGqzCat9GiI";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// ===============================
-// DOM ELEMENTS
-// ===============================
 const tableBody = document.getElementById("userList");
 const searchInput = document.getElementById("searchInput");
 const filterCity = document.getElementById("filterCity");
@@ -34,9 +28,6 @@ const closeSuccessBtn = document.getElementById("closeSuccessBtn");
 let allUsers = [];
 let selectedUser = null;
 
-// ===============================
-// FETCH USERS FROM SUPABASE
-// ===============================
 async function fetchUsers() {
   tableBody.innerHTML =
     '<tr><td colspan="6" class="loading">Fetching users...</td></tr>';
@@ -57,9 +48,6 @@ async function fetchUsers() {
   renderUsers(data);
 }
 
-// ===============================
-// RENDER USERS
-// ===============================
 function renderUsers(users) {
   if (!users.length) {
     tableBody.innerHTML =
@@ -87,9 +75,6 @@ function renderUsers(users) {
   });
 }
 
-// ===============================
-// FILTERING + SEARCH
-// ===============================
 function applyFilters() {
   const searchValue = searchInput.value.toLowerCase();
   const cityValue = filterCity.value;
@@ -119,9 +104,6 @@ filterMunicipality.addEventListener("change", applyFilters);
 filterStatus.addEventListener("change", applyFilters);
 refreshBtn.addEventListener("click", fetchUsers);
 
-// ===============================
-// SHOW MODAL (EDIT USER)
-// ===============================
 function showModal(user) {
   selectedUser = user;
   modalTitle.textContent = `Edit: ${user.full_name}`;
@@ -135,9 +117,6 @@ function showModal(user) {
   modalOverlay.classList.add("visible");
 }
 
-// ===============================
-// SAVE CHANGES
-// ===============================
 editUserForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (!selectedUser) return;
@@ -168,9 +147,6 @@ editUserForm.addEventListener("submit", async (e) => {
   fetchUsers();
 });
 
-// ===============================
-// CLOSE MODALS
-// ===============================
 closeModal.addEventListener("click", () =>
   modalOverlay.classList.remove("visible")
 );
@@ -181,7 +157,4 @@ modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) modalOverlay.classList.remove("visible");
 });
 
-// ===============================
-// INITIAL LOAD
-// ===============================
 fetchUsers();
